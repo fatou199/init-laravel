@@ -38,7 +38,20 @@ class TestController extends Controller
         return view('accueil');
     }
 
-    public function store(){
-        echo 'ok';
+    public function store(Request $request){
+        //  dd($request);
+
+        $verif = $request->validate([
+            'nom' => 'required|min: 3',
+            'email' => 'required|email'
+        ]);
+
+        if ($verif) {
+            echo 'Vérification passée';
+        } else{
+            return redirect()->back();
+        }
+
+          
     }
 }
