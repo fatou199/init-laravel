@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class TestController extends Controller
 {
-    public function methode1(){
-        return 'Ceci est la methode 1';
+    public function methode1($userName){
+        return 'Bonjour ' . $userName;
     }
 
     public function example(){

@@ -19,6 +19,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/methode', [TestController::class, 'methode1']);
+Route::get('/methode/{userName}', [TestController::class, 'methode1']);
 
 Route::get('/exemple', [TestController::class, 'example']);
