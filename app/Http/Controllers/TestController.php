@@ -15,22 +15,26 @@ class TestController extends Controller
     } 
 
     // une autre maniere de faire avec compact
-    // public function accueil(){
+    // public function structure(){
     //     $name = 'Fatou';    
     //     $numeros = ['1','2','3','4','5'];          
     //     $age = 16;           
     //     $product = 'meuble';    
-    //     return view('accueil', compact('name', 'age', 'product', 'numeros'));
+    //     return view('structure', compact('name', 'age', 'product', 'numeros'));
     // }
 
-    public function accueil(){
+    public function structure(){
         $userName = 'Fatou';    
         $numeros = ['1','2','3','4','5'];            
-        return view('accueil',[
+        return view('structure',[
             'name' => $userName, 
             'age' => 16, 
             'product' => 'meuble', 
             'numeros' => $numeros,
         ]);
+    }
+
+    public function accueil(){
+        return view('accueil');
     }
 }
