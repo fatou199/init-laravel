@@ -42,9 +42,18 @@
 
     --}}
 
-    @while($age < 18)
+    {{-- @while($age < 18)
         <p>L'âge est inférieur à 18 ans</p>
         @break
-    @endwhile
+    @endwhile --}}
+
+    @for ($i = 14; $i < $age; $i++)
+        <p>L'âge est {{$i}}</p>
+    @endfor
+
+    @foreach ($numeros as $num)
+        <p>Le numéro est {{$num}}</p>
+    @endforeach
+
 </body>
 </html>
