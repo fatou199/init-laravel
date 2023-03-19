@@ -13,4 +13,8 @@ class TestController extends Controller
     public function example(){
         return 'Ceci est un example';
     } 
+
+    public function accueil(){
+        return view('accueil');
+    }
 }
