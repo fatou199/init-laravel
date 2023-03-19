@@ -7,6 +7,27 @@
     <title>Accueil</title>
 </head>
 <body>
-    <h1>Ceci est la page d'accueil de {{ $name }}</h1>
+    <h1>Le nom de l'utilisateur est {{ $name }} et elle a {{ $age }} ans</h1>
+
+    <!-- @if ($name == 'Fatou')
+        <p>Petit message qui prouve que l'user est bien Fatou</p> 
+    @else
+        <p>Petit message qui prouve que l'user est pas Fatou</p>
+    @endif -->
+
+
+    @switch($age)
+
+    @case($age < 16)
+        <p>L'utilisateur est encore mineur</p>
+        @break  
+
+    @case($age > 16)
+        <p>L'utilisateur est en âge de s'inscrire</p>
+        @break
+
+    @default
+    <p>L'utilisateur n'a pas d'âge </p>
+    @endswitch
 </body>
 </html>
