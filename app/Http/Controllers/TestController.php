@@ -15,6 +15,7 @@ class TestController extends Controller
     } 
 
     public function accueil(){
-        return view('accueil');
+        $name = 'Fatou';
+        return view('accueil', compact('name'));
     }
 }

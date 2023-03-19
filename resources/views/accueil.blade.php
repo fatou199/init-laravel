@@ -7,6 +7,6 @@
     <title>Accueil</title>
 </head>
 <body>
-    <h1>Je suis la page d'accueil</h1>
+    <h1>Ceci est la page d'accueil de {{ $name }}</h1>
 </body>
 </html>
