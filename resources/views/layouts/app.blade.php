@@ -9,7 +9,7 @@
 <body>
     {{-- récupérer le contenu de la page enfant vers une page maître --}}
     <h1>Provient du template</h1>
-    <div style="background-color: orange">
+    <div>
         @yield('page-content')
     </div>
 </body>

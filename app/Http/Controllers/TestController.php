@@ -37,4 +37,8 @@ class TestController extends Controller
     public function accueil(){
         return view('accueil');
     }
+
+    public function store(){
+        echo 'ok';
+    }
 }
