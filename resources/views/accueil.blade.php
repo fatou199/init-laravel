@@ -47,13 +47,29 @@
         @break
     @endwhile --}}
 
-    @for ($i = 14; $i < $age; $i++)
+    {{-- @for ($i = 14; $i < $age; $i++)
         <p>L'âge est {{$i}}</p>
     @endfor
 
     @foreach ($numeros as $num)
         <p>Le numéro est {{$num}}</p>
-    @endforeach
+    @endforeach --}}
+
+    @forelse ($numeros as $num)
+        <p>Le numéro est {{$num}}</p>
+    @empty
+        <p>Aucun numéro fourni</p>
+    @endforelse
+
+    {{-- elle revient au meme que le forelse mais on doit faire un compteur --}}
+    {{-- le forelse est élément simplifier --}}
+    @if (count($numeros) >= 1)
+        @foreach ($numeros as $num)
+            <p>Le numéro est {{$num}}</p>
+        @endforeach
+    @else
+        <p>Aucun numéro fourni</p>
+    @endif
 
 </body>
 </html>
