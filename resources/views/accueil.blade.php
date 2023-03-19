@@ -5,12 +5,11 @@
 {{-- la gestion des erreurs --}}
 {{-- $errors est une variable globale de laravel --}}
 @if ($errors)
-    @error('nom')
-        <p>Le champs nom est requis</p>
-    @enderror
-    @error('email')
-        <p>Le champs email est requis</p>
-    @enderror
+    @foreach ($errors->all() as $error)
+    <ul>
+        <li>{{ $error }}</li>
+    </ul>
+    @endforeach
 @endif  
 
 

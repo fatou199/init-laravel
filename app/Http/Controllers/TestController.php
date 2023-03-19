@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidateFormRequest;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -38,13 +39,10 @@ class TestController extends Controller
         return view('accueil');
     }
 
-    public function store(Request $request){
+    public function store(ValidateFormRequest $request){
         //  dd($request);
 
-        $verif = $request->validate([
-            'nom' => 'required|min: 3',
-            'email' => 'required|email'
-        ]);
+        $verif = $request;
 
         if ($verif) {
             echo 'Vérification passée';
