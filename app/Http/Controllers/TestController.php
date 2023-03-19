@@ -16,8 +16,8 @@ class TestController extends Controller
 
     public function accueil(){
         $name = 'Fatou';               
-        $age = '16';           
-        $product = '';    
+        $age = 16;           
+        $product = 'meuble';    
         return view('accueil', compact('name', 'age', 'product'));
     }
 }

@@ -30,6 +30,8 @@
     <p>L'utilisateur n'a pas d'âge </p>
     @endswitch --}}
 
+    {{--
+
     @isset($product1)
         <p>Le produit existe</p>
     @endisset
@@ -37,5 +39,12 @@
     @empty($product)
         <p>La valeur du produit est vide ou non défini</p>
     @endempty
+
+    --}}
+
+    @while($age < 18)
+        <p>L'âge est inférieur à 18 ans</p>
+        @break
+    @endwhile
 </body>
 </html>
