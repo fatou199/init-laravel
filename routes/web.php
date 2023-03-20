@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,4 @@ Route::get('/exemple', [TestController::class, 'example']);
 Route::get('/structure', [TestController::class, 'structure']);
 
 Route::get('/accueil', [TestController::class, 'accueil']);
-Route::post('/accueil', [TestController::class, 'store']);
+Route::post('/articles', [ArticleController::class, 'store']);
