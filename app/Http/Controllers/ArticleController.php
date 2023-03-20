@@ -12,5 +12,7 @@ class ArticleController extends Controller
          Article::create([
             'titre' => $request->titre
          ]);
+
+         return redirect()->back()->with('success', 'L\'article a bel et bien été enregistrer');
     }
 }

@@ -8,11 +8,9 @@
 
         {{-- la gestion des erreurs --}}
         {{-- $errors est une variable globale de laravel --}}
-        {{-- @if ($errors)
-            @foreach ($errors->all() as $error)
-                <div class="alert alert-info">{{ $error }}</div>
-            @endforeach
-        @endif   --}}
+        @if (session()->has('success'))
+                <div class="alert alert-success">{{ session()->get('success') }}</div>
+        @endif  
 
         <form action="/articles" method="POST" class="form-product">
             @method('post')
