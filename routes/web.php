@@ -20,11 +20,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/methode/{userName}', [TestController::class, 'methode1']);
+// Route::get('/methode/{userName}', [TestController::class, 'methode1']);
 
-Route::get('/exemple', [TestController::class, 'example']);
+// Route::get('/exemple', [TestController::class, 'example']);
 
-Route::get('/structure', [TestController::class, 'structure']);
+// Route::get('/structure', [TestController::class, 'structure']);
 
-Route::get('/accueil', [TestController::class, 'accueil']);
+Route::get('/accueil', [ArticleController::class, 'index']);
 Route::post('/articles', [ArticleController::class, 'store']);

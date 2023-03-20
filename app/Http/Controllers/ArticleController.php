@@ -8,6 +8,16 @@ use App\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
 {
+
+    public function index(){   
+        $articles = Article::all();
+        
+        return view('accueil',[
+            'articles' => $articles
+        ]);
+    }
+
+
     public function store(Article $article, ArticleRequest $request){
          Article::create([
             'titre' => $request->titre
