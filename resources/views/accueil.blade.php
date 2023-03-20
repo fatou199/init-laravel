@@ -8,11 +8,11 @@
 
         {{-- la gestion des erreurs --}}
         {{-- $errors est une variable globale de laravel --}}
-        @if ($errors)
+        {{-- @if ($errors)
             @foreach ($errors->all() as $error)
                 <div class="alert alert-info">{{ $error }}</div>
             @endforeach
-        @endif  
+        @endif   --}}
 
         <form action="/articles" method="POST" class="form-product">
             @method('post')
@@ -25,7 +25,12 @@
             <h4>Enregistrer un article</h4>
             <div class="form-group">
                 <label for="">Titre</label>
-                <input type="text" class="form-control" placeholder="Titre de l'article" name="nom" value={{old('nom')}}>
+                <input type="text" class="form-control" placeholder="Titre de l'article" name="titre" value={{old('titre')}}>
+                @error('titre')
+                   <div class="text text-danger">
+                    {{ $message }}
+                    </div> 
+                @enderror
             </div>
 
             {{-- le old permet de conserver la valeur en cas d'erreur de validation --}}
