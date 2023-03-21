@@ -36,3 +36,4 @@ Route::get('/articles/{article}', [ArticleController::class, 'show']);
 
 Route::get('/articles/{article}/edit', [ArticleController::class, 'edit']);
 Route::put('/articles/{article}/update', [ArticleController::class, 'update']);
+Route::delete('/articles/{article}/delete', [ArticleController::class, 'delete']);

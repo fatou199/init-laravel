@@ -8,8 +8,13 @@
         <p>{{ $article->description }}</p>
     </div>
     <div class="card-footer">
-        <a href="/articles/{{ $article->id }}/edit">Editer</a>
-        <a href="/articles/{{ $article->id }}/delete">Supprimer</a>
+        <a href="/articles/{{ $article->id }}/edit" class="btn btn-info">Editer</a>
+
+        <form action="/articles/{{ $article->id }}/delete" method="POST">
+            @csrf
+            @method('delete')
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
     </div>
 </div>
 

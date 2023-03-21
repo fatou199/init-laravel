@@ -64,4 +64,11 @@ class ArticleController extends Controller
 
         return redirect('/accueil')->with('success', 'L\'article a été mis à jour');
     }
+
+    public function delete(Article $article){
+
+        $article->delete();
+        
+        return redirect('/accueil')->with('success', 'L\'article a bien été supprimer');
+    }
 }
