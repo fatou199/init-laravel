@@ -9,7 +9,7 @@
     </div>
     <div class="card-footer">
         <a href="/articles/{{ $article->id }}/edit">Editer</a>
-        <button class="btn btn-danger">Supprimer</button>
+        <a href="/articles/{{ $article->id }}/delete">Supprimer</a>
     </div>
 </div>
 

@@ -52,4 +52,16 @@ class ArticleController extends Controller
             'article' => $article
         ]);
     }
+
+    public function update(Article $article, ArticleRequest $request){
+        // $article permet de recuperer l'article dont on souhaite faire la maj
+        // $request recupere les données du formulaire
+
+        $article->titre = $request->titre;
+        $article->description = $request->description;
+
+        $article->save();
+
+        return redirect('/accueil')->with('success', 'L\'article a été mis à jour');
+    }
 }
