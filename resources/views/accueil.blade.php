@@ -28,6 +28,13 @@
                     {{ $message }}
                     </div> 
                 @enderror
+
+                <textarea name="description" class="form-control mt-1" placeholder="Description" rows="10" ></textarea>
+                @error('description')
+                   <div class="text text-danger">
+                    {{ $message }}
+                    </div> 
+                @enderror
             </div>
 
             {{-- le old permet de conserver la valeur en cas d'erreur de validation --}}
@@ -41,7 +48,10 @@
 <ul class="list-group mt-2">
     <h4>Mes articles disponibles</h4>
     @forelse ($articles as $article)
-        <li class="list-group-item">{{ $article->titre }}</li>
+        <li class="list-group-item">
+            <div class="title">{{ $article->titre }}</div>
+            <div class="description">{{ $article->description }}</div>
+        </li>
         @empty
         <p class="text text-info">Aucun article trouvé</p>
     @endforelse
