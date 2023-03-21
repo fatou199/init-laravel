@@ -28,4 +28,8 @@ Route::get('/', function () {
 
 Route::get('/accueil', [ArticleController::class, 'index']);
 Route::post('/articles', [ArticleController::class, 'store']);
-Route::get('/articles/{id}', [ArticleController::class, 'show']);
+// Route::get('/articles/{id}', [ArticleController::class, 'show']);
+
+// deuxième méthode pour afficher les details d'un article
+//{article} est le nom qu'on passe dans le controleur
+Route::get('/articles/{article}', [ArticleController::class, 'show']);
