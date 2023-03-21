@@ -32,8 +32,10 @@ Route::post('/articles', [ArticleController::class, 'store']);
 
 // deuxième méthode pour afficher les details d'un article
 //{article} est le nom qu'on passe dans le controleur
-Route::get('/articles/{article}', [ArticleController::class, 'show']);
 
-Route::get('/articles/{article}/edit', [ArticleController::class, 'edit']);
-Route::put('/articles/{article}/update', [ArticleController::class, 'update']);
-Route::delete('/articles/{article}/delete', [ArticleController::class, 'delete']);
+Route::prefix('articles')->group(function() {
+    Route::get('/{article}', [ArticleController::class, 'show']);
+    Route::get('/{article}/edit', [ArticleController::class, 'edit']);
+    Route::put('/{article}/update', [ArticleController::class, 'update']);
+    Route::delete('/{article}/delete', [ArticleController::class, 'delete']); 
+});
