@@ -27,13 +27,15 @@ Route::get('/', function () {
 // Route::get('/structure', [TestController::class, 'structure']);
 
 Route::get('/accueil', [ArticleController::class, 'index']);
-Route::post('/articles', [ArticleController::class, 'store']);
 // Route::get('/articles/{id}', [ArticleController::class, 'show']);
 
 // deuxième méthode pour afficher les details d'un article
 //{article} est le nom qu'on passe dans le controleur
+// Route::get('/articles/{article}', [ArticleController::class, 'show']);
+
 
 Route::prefix('articles')->group(function() {
+    Route::post('/', [ArticleController::class, 'store']);
     Route::get('/{article}', [ArticleController::class, 'show']);
     Route::get('/{article}/edit', [ArticleController::class, 'edit']);
     Route::put('/{article}/update', [ArticleController::class, 'update']);
