@@ -8,9 +8,9 @@
         <p>{{ $article->description }}</p>
     </div>
     <div class="card-footer">
-        <a href="/articles/{{ $article->id }}/edit" class="btn btn-info">Editer</a>
+        <a href="{{ route('articles.edit', $article->id )}}" class="btn btn-info">Editer</a>
 
-        <form action="/articles/{{ $article->id }}/delete" method="POST">
+        <form action="{{ route('articles.delete', $article->id )}}" method="POST">
             @csrf
             @method('delete')
             <button type="submit" class="btn btn-danger">Supprimer</button>

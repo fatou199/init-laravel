@@ -7,7 +7,7 @@
         <div class="card mt-3">
             <div class="card-body">
                 <h4>Editer un article</h4>
-                <form action="/articles/{{ $article->id }}/update" method="POST">
+                <form action="{{ route('articles.update', $article->id )}}" method="POST">
                     @csrf
                     @method('put')
 
