@@ -37,12 +37,18 @@ class ArticleController extends Controller
     //     ]);
     // }
 
-    // deuxième methode pour recupere un article
+    // deuxième methode pour recupere un article spécifique
     public function show(Article $article){
         // pas besoin de faire ceci -> $article = Article::find($id);
         // car à travers le (Article $article) il comprend qu'on veut recuperer un article specifique
-        
+
         return view('articles.show', [
+            'article' => $article
+        ]);
+    }
+
+    public function edit(Article $article){
+        return view('articles.edit', [
             'article' => $article
         ]);
     }

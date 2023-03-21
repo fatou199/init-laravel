@@ -33,3 +33,5 @@ Route::post('/articles', [ArticleController::class, 'store']);
 // deuxième méthode pour afficher les details d'un article
 //{article} est le nom qu'on passe dans le controleur
 Route::get('/articles/{article}', [ArticleController::class, 'show']);
+
+Route::get('/articles/{article}/edit', [ArticleController::class, 'edit']);

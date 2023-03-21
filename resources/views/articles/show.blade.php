@@ -8,7 +8,7 @@
         <p>{{ $article->description }}</p>
     </div>
     <div class="card-footer">
-        <button class="btn btn-primary">Editer</button>
+        <a href="/articles/{{ $article->id }}/edit">Editer</a>
         <button class="btn btn-danger">Supprimer</button>
     </div>
 </div>
