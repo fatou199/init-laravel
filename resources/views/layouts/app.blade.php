@@ -27,7 +27,7 @@
                   <a class="nav-link" href="#">Mes articles</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Mon compte</a>
+                  <a class="nav-link" href="{{ route('register')}}">Mon compte</a>
                 </li>
               </ul>
               
