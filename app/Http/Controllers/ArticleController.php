@@ -8,7 +8,7 @@ use App\Http\Requests\ArticleRequest;
 
 class ArticleController extends Controller
 {
-
+    // pour afficher tout les articles
     public function index(){   
         $articles = Article::all();
         
@@ -18,6 +18,7 @@ class ArticleController extends Controller
     }
 
 
+    // pour creer un article et l'enregistrer dans la bdd
     public function store(Article $article, ArticleRequest $request){
          Article::create([
             'titre' => $request->titre,
@@ -25,5 +26,14 @@ class ArticleController extends Controller
          ]);
 
          return redirect()->back()->with('success', 'L\'article a bel et bien été enregistrer');
+    }
+
+    // pour recuperer un article spécifique
+    public function show($id){
+        $article = Article::find($id);
+
+        return view('articles.show', [
+            'article' => $article
+        ]);
     }
 }

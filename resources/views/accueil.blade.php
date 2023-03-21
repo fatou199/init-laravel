@@ -49,7 +49,7 @@
     <h4>Mes articles disponibles</h4>
     @forelse ($articles as $article)
         <li class="list-group-item">
-            <div class="title">{{ $article->titre }}</div>
+            <a href="/articles/{{ $article->id }}" class="title">{{ $article->titre }}</a>
             <div class="description">{{ $article->description }}</div>
         </li>
         @empty

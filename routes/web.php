@@ -28,3 +28,4 @@ Route::get('/', function () {
 
 Route::get('/accueil', [ArticleController::class, 'index']);
 Route::post('/articles', [ArticleController::class, 'store']);
+Route::get('/articles/{id}', [ArticleController::class, 'show']);
