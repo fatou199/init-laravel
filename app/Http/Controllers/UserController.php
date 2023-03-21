@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateUserRequest;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -16,7 +17,7 @@ class UserController extends Controller
 
         $user->name = $request->nom;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
 
         $user->save();
 
