@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 // Route::get('/structure', [TestController::class, 'structure']);
 
-Route::get('/accueil', [ArticleController::class, 'index']);
+Route::get('/accueil', [ArticleController::class, 'index'])->name('accueil');
 // Route::get('/articles/{id}', [ArticleController::class, 'show']);
 
 // deuxième méthode pour afficher les details d'un article
