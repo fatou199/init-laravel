@@ -39,13 +39,19 @@ Route::get('/accueil', [ArticleController::class, 'index'])->name('accueil');
 //{article} est le nom qu'on passe dans le controleur
 // Route::get('/articles/{article}', [ArticleController::class, 'show']);
 
-
-Route::prefix('articles')->group(function() {
-    Route::post('/', [ArticleController::class, 'store'])->name('articles');
-    Route::get('/{article}', [ArticleController::class, 'show'])->name('articles.show');
-    Route::get('/{article}/edit', [ArticleController::class, 'edit'])->name('articles.edit');
-    Route::put('/{article}/update', [ArticleController::class, 'update'])->name('articles.update');
-    Route::delete('/{article}/delete', [ArticleController::class, 'delete'])->name('articles.delete'); 
+Route::middleware(['auth'])->group(function(){
+    Route::prefix('articles')->group(function() {
+        Route::post('/', [ArticleController::class, 'store'])
+            ->name('articles');
+        Route::get('/{article}', [ArticleController::class, 'show'])
+            ->name('articles.show')->withoutMiddleware('auth');
+        Route::get('/{article}/edit', [ArticleController::class, 'edit'])
+            ->name('articles.edit');
+        Route::put('/{article}/update', [ArticleController::class, 'update'])
+            ->name('articles.update');
+        Route::delete('/{article}/delete', [ArticleController::class, 'delete'])
+            ->name('articles.delete'); 
+    });
+    Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 });
-
-Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+ 
