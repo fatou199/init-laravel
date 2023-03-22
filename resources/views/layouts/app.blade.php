@@ -23,14 +23,19 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="{{ route('accueil')}}">Accueil</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Mes articles</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('register')}}">Mon compte</a>
-                </li>
+                @auth
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Mes articles</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Dashboard</a>
+                  </li>
+                @else
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register')}}">Mon compte</a>
+                  </li>
+                @endauth
               </ul>
-              
             </div>
           </nav> 
         @yield('page-content')

@@ -23,6 +23,8 @@ Route::get('/', function () {
 Route::get('/register', [UserController::class, 'register'])->name('register');
 Route::post('/register', [UserController::class, 'handleRegistration'])->name('register');
 
+Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::post('/login', [UserController::class, 'handleLogin'])->name('login');
 
 // Route::get('/methode/{userName}', [TestController::class, 'methode1']);
 
@@ -45,3 +47,5 @@ Route::prefix('articles')->group(function() {
     Route::put('/{article}/update', [ArticleController::class, 'update'])->name('articles.update');
     Route::delete('/{article}/delete', [ArticleController::class, 'delete'])->name('articles.delete'); 
 });
+
+Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
