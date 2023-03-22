@@ -41,7 +41,7 @@ class UserController extends Controller
         // si un élément de notre table correspond à les données saisi dans le formualire login
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            return redirect()->intended('home');
         } else {
             return redirect()->back()->with('error', 'Informations de connexion non reconnue.');
 

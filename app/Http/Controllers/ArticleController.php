@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Http\Requests\ArticleRequest;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -22,7 +23,8 @@ class ArticleController extends Controller
     public function store(Article $article, ArticleRequest $request){
          Article::create([
             'titre' => $request->titre,
-            'description' => $request->description
+            'description' => $request->description,
+            'user_id' => Auth::id()
          ]);
 
          return redirect()->back()->with('success', 'L\'article a bel et bien été enregistrer');
