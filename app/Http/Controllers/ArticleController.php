@@ -73,4 +73,12 @@ class ArticleController extends Controller
         
         return redirect('/accueil')->with('success', 'L\'article a bien été supprimer');
     }
+
+    public function mine(){
+        // ca revient en php a dire select * from article where user_id = 1
+        $myArticles = Article::where('user_id', Auth::id())->get();
+        return view('articles.mine', [
+            'myArticles' => $myArticles 
+        ]);
+    }
 }

@@ -25,7 +25,7 @@
                 </li>
                 @auth
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Mes articles</a>
+                    <a class="nav-link" href="{{route('articles.mine')}}">Mes articles</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{ route('dashboard')}}">Dashboard</a>

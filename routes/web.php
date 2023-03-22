@@ -49,8 +49,13 @@ Route::middleware(['auth'])->group(function(){
 
         Route::delete('/{article}/delete', [ArticleController::class, 'delete'])
             ->name('articles.delete'); 
+        
     });
+    
     Route::get('/home', [UserController::class, 'dashboard'])
         ->name('dashboard');
+
+    Route::get('/mine', [ArticleController::class, 'mine'])
+    ->name('articles.mine');
 });
  
