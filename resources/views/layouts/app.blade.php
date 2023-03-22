@@ -28,7 +28,7 @@
                     <a class="nav-link" href="#">Mes articles</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
+                    <a class="nav-link" href="{{ route('dashboard')}}">Dashboard</a>
                   </li>
                 @else
                   <li class="nav-item">
