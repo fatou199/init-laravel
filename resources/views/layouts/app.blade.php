@@ -24,11 +24,14 @@
                   <a class="nav-link" href="{{ route('accueil')}}">Accueil</a>
                 </li>
                 @auth
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('dashboard')}}">Dashboard</a>
+                </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('articles.mine')}}">Mes articles</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('dashboard')}}">Dashboard</a>
+                    <a class="nav-link" href="{{ route('logout')}}">Me deconnecter</a>
                   </li>
                 @else
                   <li class="nav-item">
@@ -38,7 +41,9 @@
               </ul>
             </div>
           </nav> 
+
         @yield('page-content')
+
     </div>
 </body>
 </html>

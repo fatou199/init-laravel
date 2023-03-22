@@ -7,7 +7,7 @@
             <h4>Mes articles disponibles</h4>
             @forelse ($myArticles as $article)
                 <li class="list-group-item">
-                    <a href="" class="title">{{ $article->titre }}</a>
+                    <a href="{{ route('articles.show', $article->id) }}" class="title">{{ $article->titre }}</a>
                     <div class="description">{{ $article->description }}</div>
                 </li>
                 @empty
