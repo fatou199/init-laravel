@@ -11,7 +11,7 @@ class ArticleController extends Controller
 {
     // pour afficher tout les articles
     public function index(){   
-        $articles = Article::all();
+        $articles = Article::paginate(6);
         
         return view('accueil',[
             'articles' => $articles

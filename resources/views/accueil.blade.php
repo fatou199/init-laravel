@@ -60,8 +60,9 @@
                 </li>
                 @empty
                 <p class="text text-info">Aucun article trouvé</p>
-            @endforelse
+            @endforelse 
         </ul>
+        <div>{{ $articles->links() }} </div>
     </div>
 </div>
 @endsection
